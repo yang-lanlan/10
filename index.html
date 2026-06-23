@@ -242,10 +242,10 @@
 </head>
 <body>
   <main>
-    <p class="eyebrow">拿不定主意？丢一次就知道。</p>
+    <p class="eyebrow">神的指示是</p>
 
     <div class="coin-stage">
-      <button class="coin" id="coin" aria-label="点击抛硬币">
+      <button class="coin" id="coin" aria-label="交给上帝">
         <div class="coin-inner" id="coinInner">
           <div class="face front"><span class="face-label">YES</span></div>
           <div class="face back"><span class="face-label">NO</span></div>
@@ -253,7 +253,7 @@
       </button>
     </div>
 
-    <p class="result" id="result" aria-live="polite">点击硬币开始</p>
+    <p class="result" id="result" aria-live="polite">他说</p>
 
     <div class="history-block">
       <p class="history-label">最近五次</p>
@@ -281,7 +281,7 @@
   function flip(){
     coin.disabled = true;
     resultEl.removeAttribute('data-result');
-    resultEl.textContent = '抛掷中…';
+    resultEl.textContent = '?';
 
     const result = Math.random() < 0.5 ? 'YES' : 'NO';
     const spins = reduceMotion ? 1 : 4 + Math.floor(Math.random() * 3); // 4~6 圈
@@ -327,7 +327,7 @@
   clearBtn.addEventListener('click', () => {
     history = [];
     renderHistory();
-    resultEl.textContent = '点击硬币开始';
+    resultEl.textContent = '他说';
     resultEl.removeAttribute('data-result');
   });
 
